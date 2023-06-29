@@ -80,3 +80,7 @@ def test_TC_005_05_02_redirect_to_call_16_section_title(driver):
     driver.find_element(*call_16_day_daily_forecast_data).click()
     call_16_section_title = driver.find_element(*call_16_day_daily_forecast_data_section)
     assert call_16_section_title.is_displayed(), 'Title "Call 16 day / daily forecast data" Not Found'
+
+def test_should_open_given_link(driver):
+    driver.get('https://openweathermap.org/')
+    assert 'openweathermap' in driver.current_url
